@@ -2,6 +2,11 @@
 # Add one image file name per line — it must match a file you've placed
 # inside images/best-work/. Lines starting with # are ignored.
 #
-# Example:
-# best-work_1.png
-# best-work_2.jpg
+# These 6 are sample placeholders so you can see the collage in action.
+# Delete them and swap in your real file names whenever you're ready.
+best-work_1.png
+best-work_2.png
+best-work_3.png
+best-work_4.png
+best-work_5.png
+best-work_6.png

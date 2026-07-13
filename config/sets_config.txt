@@ -2,6 +2,11 @@
 # Add one image file name per line — it must match a file you've placed
 # inside images/sets/. Lines starting with # are ignored.
 #
-# Example:
-# sets_1.png
-# sets_2.jpg
+# These 6 are sample placeholders so you can see the collage in action.
+# Delete them and swap in your real file names whenever you're ready.
+sets_1.png
+sets_2.png
+sets_3.png
+sets_4.png
+sets_5.png
+sets_6.png

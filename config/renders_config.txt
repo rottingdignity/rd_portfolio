@@ -2,6 +2,11 @@
 # Add one image file name per line — it must match a file you've placed
 # inside images/renders/. Lines starting with # are ignored.
 #
-# Example:
-# renders_1.png
-# renders_2.jpg
+# These 6 are sample placeholders so you can see the collage in action.
+# Delete them and swap in your real file names whenever you're ready.
+renders_1.png
+renders_2.png
+renders_3.png
+renders_4.png
+renders_5.png
+renders_6.png

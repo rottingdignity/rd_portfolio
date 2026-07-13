@@ -2,6 +2,11 @@
 # Add one image file name per line — it must match a file you've placed
 # inside images/textures/. Lines starting with # are ignored.
 #
-# Example:
-# textures_1.png
-# textures_2.jpg
+# These 6 are sample placeholders so you can see the collage in action.
+# Delete them and swap in your real file names whenever you're ready.
+textures_1.png
+textures_2.png
+textures_3.png
+textures_4.png
+textures_5.png
+textures_6.png
