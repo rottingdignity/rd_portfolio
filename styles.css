@@ -82,7 +82,7 @@ body {
 /* ---- category pages ---- */
 
 .category-page {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   animation: fadeIn 0.5s ease both;
@@ -121,7 +121,7 @@ body {
 
 .scroll-row {
   flex: 1;
-  height: calc(100vh - 140px);
+  min-height: 0;
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0 24px 24px;
