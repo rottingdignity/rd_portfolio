@@ -14,6 +14,16 @@ body {
   color: #1a1a1a;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ---- main landing page ---- */
 
 .landing {
@@ -25,11 +35,13 @@ body {
   gap: 40px;
   padding: 24px;
   text-align: center;
+  animation: fadeIn 0.6s ease both;
 }
 
 .landing h1 {
   font-size: clamp(1.8rem, 5vw, 2.8rem);
   font-weight: 400;
+  animation: riseIn 0.6s ease both;
 }
 
 .nav-options {
@@ -40,18 +52,31 @@ body {
 }
 
 .nav-options a {
-  display: inline-block;
-  padding: 12px 28px;
-  background: #6f6f6f;
-  color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 64px;
+  background: #c2c2c2;
+  color: #1a1a1a;
   text-decoration: none;
-  border: 1px solid #555555;
   font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  animation: riseIn 0.5s ease both;
 }
+
+.nav-options a:nth-child(1) { animation-delay: 0.05s; }
+.nav-options a:nth-child(2) { animation-delay: 0.1s; }
+.nav-options a:nth-child(3) { animation-delay: 0.15s; }
+.nav-options a:nth-child(4) { animation-delay: 0.2s; }
+.nav-options a:nth-child(5) { animation-delay: 0.25s; }
 
 .nav-options a:hover,
 .nav-options a:focus-visible {
-  background: #5a5a5a;
+  background: #cfcfcf;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
 /* ---- category pages ---- */
@@ -60,29 +85,38 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  animation: fadeIn 0.5s ease both;
 }
 
 .back-link {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 48px;
   margin: 24px;
-  padding: 10px 20px;
-  background: #6f6f6f;
-  color: #f2f2f2;
+  background: #c2c2c2;
+  color: #1a1a1a;
   text-decoration: none;
-  border: 1px solid #555555;
   align-self: flex-start;
   font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .back-link:hover,
 .back-link:focus-visible {
-  background: #5a5a5a;
+  background: #cfcfcf;
+  transform: translateX(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
 .category-title {
   margin: 0 24px 20px;
   font-size: 1.4rem;
   font-weight: 400;
+  animation: riseIn 0.5s ease both;
+  animation-delay: 0.1s;
 }
 
 .scroll-row {
@@ -93,6 +127,8 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0 24px 32px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
 }
 
 .scroll-row .item {
@@ -106,4 +142,30 @@ body {
   justify-content: center;
   color: #4a4a4a;
   font-size: 1rem;
+  scroll-snap-align: start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  animation: riseIn 0.5s ease both;
+}
+
+.scroll-row .item:hover,
+.scroll-row .item:focus-visible {
+  transform: translateY(-6px);
+  border-color: #777777;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.scroll-row .item { animation-delay: calc(0.04s * var(--i, 0)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .landing,
+  .landing h1,
+  .nav-options a,
+  .category-page,
+  .category-title,
+  .scroll-row .item {
+    animation: none !important;
+  }
+  .scroll-row {
+    scroll-behavior: auto;
+  }
 }
