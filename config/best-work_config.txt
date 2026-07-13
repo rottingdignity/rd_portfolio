@@ -1,0 +1,7 @@
+# best-work_config.txt
+# Add one image file name per line — it must match a file you've placed
+# inside images/best-work/. Lines starting with # are ignored.
+#
+# Example:
+# best-work_1.png
+# best-work_2.jpg

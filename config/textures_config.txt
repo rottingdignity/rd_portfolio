@@ -1,0 +1,7 @@
+# textures_config.txt
+# Add one image file name per line — it must match a file you've placed
+# inside images/textures/. Lines starting with # are ignored.
+#
+# Example:
+# textures_1.png
+# textures_2.jpg

@@ -1,0 +1,12 @@
+# models_config.txt
+# Add one image file name per line — it must match a file you've placed
+# inside images/models/. Lines starting with # are ignored.
+#
+# These 6 are sample placeholders so you can see the collage in action.
+# Delete them and swap in your real file names whenever you're ready.
+model_1.png
+model_2.png
+model_3.png
+model_4.png
+model_5.png
+model_6.png

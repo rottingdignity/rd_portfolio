@@ -1,0 +1,7 @@
+# renders_config.txt
+# Add one image file name per line — it must match a file you've placed
+# inside images/renders/. Lines starting with # are ignored.
+#
+# Example:
+# renders_1.png
+# renders_2.jpg
