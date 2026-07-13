@@ -121,40 +121,44 @@ body {
 
 .scroll-row {
   flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  height: calc(100vh - 140px);
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0 24px 32px;
+  padding: 0 24px 24px;
   scroll-behavior: smooth;
-  scroll-snap-type: x proximity;
+
+  /* horizontal masonry: fill each column top-to-bottom, then start a
+     new column to the right once a column is full */
+  column-width: 280px;
+  column-gap: 14px;
+  column-fill: auto;
 }
 
-.scroll-row .item {
-  flex: 0 0 auto;
-  width: 320px;
-  height: 320px;
-  background: #a8a8a8;
+.collage-item {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 14px;
+  break-inside: avoid;
   border: 1px solid #555555;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4a4a4a;
-  font-size: 1rem;
-  scroll-snap-align: start;
+  background: #a8a8a8;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   animation: riseIn 0.5s ease both;
+  animation-delay: calc(0.03s * var(--i, 0));
 }
 
-.scroll-row .item:hover,
-.scroll-row .item:focus-visible {
+.collage-item:hover,
+.collage-item:focus-visible {
   transform: translateY(-6px);
   border-color: #777777;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
-.scroll-row .item { animation-delay: calc(0.04s * var(--i, 0)); }
+.empty-msg {
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  padding: 24px;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .landing,
@@ -162,7 +166,7 @@ body {
   .nav-options a,
   .category-page,
   .category-title,
-  .scroll-row .item {
+  .collage-item {
     animation: none !important;
   }
   .scroll-row {
